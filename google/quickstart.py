@@ -38,9 +38,9 @@ def main():
 
     # Call the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTCtime
-    print('Getting the upcoming 10 events')
+    print('Getting the upcoming 3 events')
     events_result = service.events().list(calendarId='primary', timeMin=now,
-                                          maxResults=10, singleEvents=True,
+                                          maxResults=3, singleEvents=True,
                                           orderBy='startTime').execute()
     events = events_result.get('items', [])
 
